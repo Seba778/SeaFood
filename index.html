@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seafood Shack | Mariscos in Dallas & Mesquite, TX</title>
+  <meta name="description" content="Seafood Shack — ceviches, cocteles, boiling pots, fried baskets and Mexican-style seafood. Three locations: Northwest Hwy and Webb Chapel in Dallas, and Mesquite, TX." />
+  <meta name="theme-color" content="#24479b" />
+  <link rel="icon" type="image/png" href="/img/favicon.png" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:title" content="Seafood Shack | Dallas & Mesquite, TX" />
+  <meta property="og:description" content="Looking for the best seafood in Dallas? You are in the right place." />
+  <meta property="og:image" content="/img/fotos/local-5-1600.webp" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="/img/fotos/local-5-1600.webp" imagesrcset="/img/fotos/local-5-800.webp 800w, /img/fotos/local-5-1600.webp 1600w, /img/fotos/local-5-2400.webp 2400w" imagesizes="100vw" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <a class="skip" href="#menu" data-i18n="skip">Skip to menu</a>
+
+  <header class="topbar" id="top">
+    <div class="wrap topbar__inner">
+      <a href="#top" class="brand" aria-label="Seafood Shack">
+        <img src="/img/logo/logo.webp" alt="Seafood Shack" width="600" height="410" />
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#menu" data-i18n="nav.menu">Menu</a>
+        <a href="#specials" data-i18n="nav.specials">Specials</a>
+        <a href="#gallery" data-i18n="nav.gallery">Photos</a>
+        <a href="#locations" data-i18n="nav.locations">Locations</a>
+      </nav>
+      <div class="topbar__actions">
+        <button class="lang" type="button" id="langToggle" aria-label="Cambiar idioma / Change language">ES</button>
+        <a class="btn btn--small btn--yellow" href="#locations" data-i18n="cta.call">Call / Order</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <img class="hero__bg" src="/img/fotos/local-5-1600.webp"
+           srcset="/img/fotos/local-5-800.webp 800w, /img/fotos/local-5-1600.webp 1600w, /img/fotos/local-5-2400.webp 2400w"
+           sizes="100vw" alt="" fetchpriority="high" />
+      <div class="wrap hero__content">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Mariscos · Dallas & Mesquite, TX</p>
+        <h1 class="hero__title" data-i18n-html="hero.title">The best seafood<br/>in Dallas.</h1>
+        <p class="hero__lead" data-i18n="hero.lead">Ceviches, cocteles, boiling pots and fresh fried baskets. You're in the right place.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--yellow" href="#menu" data-i18n="cta.menu">See the menu</a>
+          <a class="btn btn--ghost" href="#locations" data-i18n="cta.find">Find a location</a>
+        </div>
+        <div class="hero__status" id="heroStatus" aria-live="polite"></div>
+      </div>
+      <div class="tiles" aria-hidden="true"><span class="t-teal"></span><span class="t-blue"></span><span class="t-yellow"></span></div>
+    </section>
+
+    <!-- FAVORITES -->
+    <section class="section favorites" aria-labelledby="fav-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="title" id="fav-title"><span data-i18n="fav.title">House favorites</span></h2>
+          <p class="section__lead" data-i18n="fav.lead">A taste of what comes out of our kitchen every day.</p>
+        </div>
+      </div>
+      <div class="fav-scroller" id="favorites"></div>
+    </section>
+
+    <!-- SPECIALS -->
+    <section class="section specials" id="specials" aria-labelledby="sp-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="title" id="sp-title"><span data-i18n="sp.title">Daily specials</span></h2>
+          <p class="section__lead" data-i18n="sp.lead">Every week, at every location.</p>
+        </div>
+        <div class="specials__grid" id="specialsGrid"></div>
+        <div class="lunch-banner">
+          <div>
+            <strong data-i18n="lunch.title">Lunch Specials</strong>
+            <span class="lunch-banner__when" data-i18n="lunch.when">Mon – Fri · 11 AM – 3 PM · from $8.99</span>
+          </div>
+          <a class="btn btn--small btn--yellow" href="#menu" data-cat-link="lunch" data-i18n="lunch.cta">See lunch menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="section menu" id="menu" aria-labelledby="menu-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="title" id="menu-title"><span data-i18n="menu.title">Our menu</span></h2>
+          <p class="section__lead" data-i18n="menu.lead">Prices and some dishes vary by location. Choose yours:</p>
+        </div>
+
+        <div class="loc-switch" role="radiogroup" aria-label="Location" id="menuLocSwitch"></div>
+        <p class="loc-summary" id="locSummary" aria-live="polite"></p>
+      </div>
+
+      <nav class="cat-nav" aria-label="Menu categories">
+        <div class="wrap cat-nav__inner" id="catNav" role="tablist" aria-label="Menu categories"></div>
+      </nav>
+
+      <div class="wrap">
+        <div class="menu__body" id="menuBody" role="tabpanel"></div>
+
+        <div class="menu__foot">
+          <p class="legend">
+            <span><span class="tag tag--raw" aria-hidden="true">★</span> <span data-i18n="legend.raw">Raw or undercooked</span></span>
+            <span><span class="tag tag--spicy" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M15.5 6.5c2.6.6 4.4 3 4 6.2C18.8 18 12 21.5 4 20.5c5-1.6 8.4-5 9.1-10.6.2-1.8 1-3.1 2.4-3.4Z" fill="#e2412c"/><path d="M15.2 6.6c.1-1.6.9-3 2.6-3.6M14.6 6.8c1.2-.9 2.9-.8 3.9.4" fill="none" stroke="#2f9c56" stroke-width="1.8" stroke-linecap="round"/></svg></span> <span data-i18n="legend.spicy">Spicy</span></span>
+          </p>
+          <button type="button" class="btn btn--outline btn--small" id="printedMenuBtn" data-i18n="menu.printed">View printed menu</button>
+        </div>
+        <p class="fine" data-i18n="menu.fine">Prices are subject to change without notice. Food may contain small bones & fragments. We fry in peanut oil; canola or olive oil available for sautéed dishes upon request. No additional discounts applied to specially priced items.</p>
+        <p class="fine fine--warn" data-i18n="menu.warning">Warning: there is a risk associated with consuming raw oysters or any raw animal protein. If you have a chronic illness of the liver, stomach or blood, or have immune disorders, you are at greatest risk of illness from raw oysters and should eat oysters fully cooked. If unsure of your risk, consult your physician.</p>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section gallery" id="gallery" aria-labelledby="gal-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="title" id="gal-title"><span data-i18n="gal.title">Come hang out</span></h2>
+          <p class="section__lead" data-i18n="gal.lead">Full bar, big tables and a laid-back vibe for the whole family.</p>
+        </div>
+        <div class="gallery__grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section class="section locations" id="locations" aria-labelledby="loc-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="title" id="loc-title"><span data-i18n="loc.title">Locations & contact</span></h2>
+          <p class="section__lead" data-i18n="loc.lead">Three locations across DFW. Call ahead for to-go orders.</p>
+        </div>
+        <div class="locations__list" id="locList"></div>
+        <div class="hours">
+          <h3 data-i18n="loc.hours">Hours · all locations</h3>
+          <dl id="hoursList"></dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <img src="/img/logo/logo.webp" alt="Seafood Shack" class="footer__logo" width="600" height="410" loading="lazy" />
+      <div class="footer__social">
+        <p data-i18n="footer.follow">Follow us</p>
+        <div class="social" id="social"></div>
+      </div>
+      <p class="footer__copy">© <span id="year"></span> Seafood Shack · Dallas & Mesquite, TX</p>
+    </div>
+  </footer>
+
+  <!-- sticky mobile action bar -->
+  <div class="mobile-bar" id="mobileBar">
+    <a href="#menu" data-i18n="bar.menu">Menu</a>
+    <a href="#locations" data-i18n="bar.directions">Directions</a>
+    <a href="#locations" class="mobile-bar__call" data-i18n="bar.call">Call</a>
+  </div>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+    <button class="lightbox__close" type="button" aria-label="Close" data-close>×</button>
+    <button class="lightbox__nav lightbox__prev" type="button" aria-label="Previous">‹</button>
+    <img alt="" id="lightboxImg" />
+    <button class="lightbox__nav lightbox__next" type="button" aria-label="Next">›</button>
+  </dialog>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
