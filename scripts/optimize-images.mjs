@@ -7,7 +7,7 @@ const SRC = 'source';
 const OUT = 'public/img';
 
 const jobs = [
-  { dir: 'fotos', widths: [800, 1600, 2400], quality: 72 },
+  { dir: 'fotos', widths: [800, 1600], quality: 80 },
   { dir: 'menu', widths: [1400, 2800], quality: 82 },
   { dir: 'platillos', widths: [600, 1200], quality: 78 },
 ];

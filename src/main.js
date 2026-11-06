@@ -208,8 +208,8 @@ function setCat(id, { focus = false, reveal = false } = {}) {
 /* ---------- galería + lightbox ---------- */
 const PHOTOS = [5, 3, 2, 1, 4].map((n) => ({
   src: `/img/fotos/local-${n}-1600.webp`,
-  srcset: `/img/fotos/local-${n}-800.webp 800w, /img/fotos/local-${n}-1600.webp 1600w, /img/fotos/local-${n}-2400.webp 2400w`,
-  full: `/img/fotos/local-${n}-2400.webp`,
+  srcset: `/img/fotos/local-${n}-800.webp 800w, /img/fotos/local-${n}-1600.webp 1600w`,
+  full: `/img/fotos/local-${n}-1600.webp`,
 }));
 function renderGallery() {
   $('#galleryGrid').innerHTML = PHOTOS.map((p, i) => `
