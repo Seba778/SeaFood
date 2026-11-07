@@ -79,7 +79,7 @@ export const SPECIALS = [
   },
 ];
 
-// Platillos destacados: primero las fotos profesionales (Drive 2026-11), luego recortes de los menús impresos.
+// Platillos destacados: solo fotos con fondo (Drive del cliente); nada de recortes con fondo blanco.
 export const FAVORITES = [
   { img: 'boil-camaron', name: 'Shack Boiling Pot · 1 LB Shrimp', price: 'Market', note: { en: 'Spicy shrimp boil with corn and potatoes', es: 'Camarón picante con elote y papa' } },
   { img: 'boil-cangrejo', name: 'Shack Boiling Pot · 1 LB Crablegs', price: 'Market', note: { en: 'Crab legs in our spicy boil sauce, with corn', es: 'Patas de cangrejo en salsa boiling picante, con elote' } },
@@ -87,11 +87,9 @@ export const FAVORITES = [
   { img: 'caldo-mariscos', name: 'Caldo de Mariscos', price: '15.99+', note: { en: 'Shrimp, fish & octopus soup', es: 'Caldo de camarón, pescado y pulpo' } },
   { img: 'tilapia-mexicana', name: 'Tilapia a la Mexicana', price: '18.99', note: { en: 'Tilapia in ranchero sauce with rice & veggies', es: 'Tilapia en salsa ranchera con arroz y verduras' } },
   { img: 'calamari', name: 'Fried Calamari with Jalapeños', price: '13.99', note: { en: 'Crispy calamari & jalapeños with coleslaw', es: 'Calamar y jalapeño fritos con ensalada de col' } },
-  { img: 'camarones-diabla', name: 'Camarones a la Diabla', price: '19.99', note: { en: 'Jumbo shrimp in spicy Mexican red sauce', es: 'Camarón jumbo en salsa roja picante' } },
   { img: 'fajitas', name: 'Fajitas', price: '18.99+', note: { en: 'Skirt steak, chicken or jumbo shrimp', es: 'Arrachera, pollo o camarón jumbo' } },
   { img: 'aguachile', name: 'Camarones Aguachile', price: '18.99', note: { en: 'Butterfly shrimp in spicy lime & pineapple', es: 'Camarón mariposa en limón y piña picante' } },
   { img: 'tacos', name: 'Tacos Cancún', price: '15.99', note: { en: 'Lightly battered fish, cabbage & queso fresco', es: 'Pescado capeado, repollo y queso fresco' } },
-  { img: 'coctel', name: 'Cóctel de Camarón', price: '11.99+', note: { en: 'Shrimp, octopus or oyster in our special sauce', es: 'Camarón, pulpo u ostión en nuestra salsa especial' } },
 ];
 
 // Menú. Cada item: { name, desc?, price | prices: [[label, price]], tags?: ['raw','spicy'], only?: [locIds], replace?: {locId: item} }
