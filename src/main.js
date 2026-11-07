@@ -20,7 +20,7 @@ const STR = {
     'legend.raw': 'Raw or undercooked', 'legend.spicy': 'Spicy', market: 'Market price',
     'gal.title': 'Come hang out', 'gal.lead': 'Full bar, big tables and a laid-back vibe for the whole family.',
     'loc.title': 'Locations & contact', 'loc.lead': 'Three locations across DFW. Call ahead for to-go orders.',
-    'loc.hours': 'Hours · all locations', 'loc.directions': 'Directions', 'loc.seeMenu': 'See its menu', 'loc.selected': 'Your location',
+    'loc.hours': 'Hours · all locations', 'loc.directions': 'How to get here', 'loc.openMaps': 'Open in Google Maps', 'loc.seeMenu': 'See its menu', 'loc.selected': 'Your location',
     'footer.follow': 'Follow us',
     'bar.menu': 'Menu', 'bar.directions': 'Directions', 'bar.call': 'Call',
     open: 'Open now', closed: 'Closed', closesAt: 'until', opensAt: 'opens',
@@ -44,7 +44,7 @@ const STR = {
     'legend.raw': 'Crudo o poco cocido', 'legend.spicy': 'Picante', market: 'Precio de mercado',
     'gal.title': 'Ven a pasarla bien', 'gal.lead': 'Barra completa, mesas grandes y buen ambiente para toda la familia.',
     'loc.title': 'Ubicaciones y contacto', 'loc.lead': 'Tres sucursales en DFW. Llama para ordenar para llevar.',
-    'loc.hours': 'Horario · todas las sucursales', 'loc.directions': 'Cómo llegar', 'loc.seeMenu': 'Ver su menú', 'loc.selected': 'Tu sucursal',
+    'loc.hours': 'Horario · todas las sucursales', 'loc.directions': 'Cómo llegar', 'loc.openMaps': 'Abrir en Google Maps', 'loc.seeMenu': 'Ver su menú', 'loc.selected': 'Tu sucursal',
     'footer.follow': 'Síguenos',
     'bar.menu': 'Menú', 'bar.directions': 'Cómo llegar', 'bar.call': 'Llamar',
     open: 'Abierto ahora', closed: 'Cerrado', closesAt: 'hasta las', opensAt: 'abre',
@@ -263,9 +263,14 @@ function renderLocations() {
         </header>
         <p class="loc__addr">${ICON.pin}<span>${esc(l.street)}<br/>${esc(l.cityLine)}</span></p>
         <p class="loc__phones">${ICON.phone}<span>${l.phones.map((p) => `<a href="${tel(p)}">${esc(p)}</a>`).join('<br/>')}</span></p>
+        <div class="loc__how" id="how-${l.id}" tabindex="-1">
+          <h4>${t('loc.directions')}</h4>
+          <p class="loc__near">${esc(L(l.directions.near))}</p>
+          <ol>${l.directions.steps.map((s) => `<li>${L(s)}</li>`).join('')}</ol>
+          <a class="loc__gmaps" href="${l.maps}" target="_blank" rel="noopener">${t('loc.openMaps')} ↗</a>
+        </div>
         <div class="loc__actions">
           <a class="btn btn--small btn--blue" href="${tel(l.phones[0])}">${t('bar.call')}</a>
-          <a class="btn btn--small btn--outline" href="${l.maps}" target="_blank" rel="noopener">${t('loc.directions')}</a>
           <button type="button" class="link-btn" data-see-menu="${l.id}">${t('loc.seeMenu')}</button>
         </div>
       </div>
@@ -283,8 +288,8 @@ function markActiveLoc() {
   // barra móvil apunta a la sucursal elegida
   const bar = $('#mobileBar');
   bar.querySelector('.mobile-bar__call').href = tel(currentLoc().phones[0]);
-  bar.querySelector('[data-i18n="bar.directions"]').href = currentLoc().maps;
-  bar.querySelector('[data-i18n="bar.directions"]').target = '_blank';
+  // "Cómo llegar" baja a las indicaciones escritas de la sucursal elegida (no abre Google Maps)
+  bar.querySelector('[data-i18n="bar.directions"]').href = `#how-${locId}`;
 }
 
 function renderSocial() {

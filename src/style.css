@@ -285,6 +285,14 @@ p { margin: 0; }
 .loc svg { width: 20px; height: 20px; flex: none; color: var(--teal-deep); margin-top: 2px; }
 .loc__phones a { font-weight: 700; color: var(--navy); text-decoration: none; }
 .loc__phones a:hover { text-decoration: underline; }
+.loc__how { margin-top: 16px; padding: 14px 16px; background: var(--paper); border: 2px dashed var(--line); border-radius: 14px; scroll-margin-top: calc(var(--topbar-h) + 16px); }
+.loc__how:focus { outline: none; }
+.loc__how:target, .loc__how:focus-visible { border-color: var(--teal-deep); border-style: solid; }
+.loc__how h4 { font-family: var(--display); font-weight: 400; color: var(--navy); font-size: 1.15rem; margin: 0 0 4px; }
+.loc__near { font-weight: 700; color: var(--ink); margin: 0 0 8px; font-size: .95rem; }
+.loc__how ol { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; font-size: .9rem; color: var(--muted); }
+.loc__how ol b { color: var(--navy); }
+.loc__gmaps { display: inline-block; margin-top: 10px; font-size: .85rem; font-weight: 700; color: var(--teal-deep); }
 .loc__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: auto; padding-top: 16px; }
 
 .hours { margin-top: 28px; background: var(--navy); color: var(--white); border-radius: var(--radius); padding: 22px 24px; }

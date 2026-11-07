@@ -28,6 +28,15 @@ export const LOCATIONS = [
     maps: 'https://maps.app.goo.gl/8ZpmyGKNZ6V9kySaA',
     geo: [32.8611918, -96.8564937],
     menuImages: ['northwest-a', 'northwest-b'],
+    // Indicaciones escritas de "Cómo llegar" (<b> permitido). Confirmar con el cliente.
+    directions: {
+      near: { en: 'On Northwest Hwy (Loop 12), right across from Bachman Lake, a few minutes from Love Field.', es: 'Sobre Northwest Hwy (Loop 12), frente al lago Bachman, a pocos minutos de Love Field.' },
+      steps: [
+        { en: '<b>From I-35E (Stemmons):</b> take the Northwest Hwy / Loop 12 exit and head east about 2 miles. We are on your left (north side).', es: '<b>Desde la I-35E (Stemmons):</b> toma la salida Northwest Hwy / Loop 12 y ve hacia el este unas 2 millas. Estamos a tu izquierda (lado norte).' },
+        { en: '<b>From the Dallas North Tollway:</b> take the Northwest Hwy exit and head west about 2 miles, past Love Field. We are on your right.', es: '<b>Desde la Dallas North Tollway:</b> toma la salida Northwest Hwy y ve hacia el oeste unas 2 millas, pasando Love Field. Estamos a tu derecha.' },
+        { en: 'Look for Suite 195 in the shopping center.', es: 'Busca la Suite 195 dentro del centro comercial.' },
+      ],
+    },
   },
   {
     id: 'webb-chapel',
@@ -39,6 +48,13 @@ export const LOCATIONS = [
     maps: 'https://maps.app.goo.gl/mtCzdVoB532UW9Vk7',
     geo: [32.9077439, -96.872777],
     menuImages: ['webb-chapel-a', 'webb-chapel-b'],
+    directions: {
+      near: { en: 'On Webb Chapel Rd, just south of Forest Ln.', es: 'Sobre Webb Chapel Rd, justo al sur de Forest Ln.' },
+      steps: [
+        { en: '<b>From I-635 (LBJ Fwy):</b> take the Webb Chapel Rd exit and head south about 1 mile. Cross Forest Ln and we are right there.', es: '<b>Desde la I-635 (LBJ Fwy):</b> toma la salida Webb Chapel Rd y ve hacia el sur como 1 milla. Cruza Forest Ln y ahí estamos.' },
+        { en: '<b>From I-35E (Stemmons):</b> take the Forest Ln exit, head east about 1.5 miles and turn right (south) on Webb Chapel Rd.', es: '<b>Desde la I-35E (Stemmons):</b> toma la salida Forest Ln, ve hacia el este como 1.5 millas y da vuelta a la derecha (sur) en Webb Chapel Rd.' },
+      ],
+    },
   },
   {
     id: 'mesquite',
@@ -50,6 +66,13 @@ export const LOCATIONS = [
     maps: 'https://maps.app.goo.gl/xMNu6F4nftKtVB8p8',
     geo: [32.8117602, -96.6331629],
     menuImages: ['mesquite-a', 'mesquite-b'],
+    directions: {
+      near: { en: 'On N Town East Blvd, by Town East Mall.', es: 'Sobre N Town East Blvd, junto a Town East Mall.' },
+      steps: [
+        { en: '<b>From I-635 (LBJ Fwy):</b> take the Town East Blvd exit and follow N Town East Blvd toward Town East Mall.', es: '<b>Desde la I-635 (LBJ Fwy):</b> toma la salida Town East Blvd y sigue por N Town East Blvd hacia Town East Mall.' },
+        { en: '<b>From US-80:</b> take the Town East Blvd exit and head south on N Town East Blvd to the mall area.', es: '<b>Desde la US-80:</b> toma la salida Town East Blvd y ve hacia el sur por N Town East Blvd hasta la zona del mall.' },
+      ],
+    },
   },
 ];
 
